@@ -322,7 +322,7 @@ body, html {
     
     .about > h2 {
         font-size: 3rem;
-        margin: 40px 0 20px 0;
+        margin: 70px 0 20px 0;
     }
     
     .about > p {
@@ -359,6 +359,11 @@ body, html {
     .about {
         /* padding-top: 90px; */ /* Removed to keep navbar at top */
     }
+
+    .about > h2 {
+        font-size: 2.5rem;
+        margin: 140px 0 15px 0;
+    }
 }
 
 @media (max-width: 480px) {
@@ -368,7 +373,7 @@ body, html {
     
     .about > h2 {
         font-size: 2.5rem;
-        margin: 10px 0 15px 0;
+        margin: 140px 0 15px 0;
     }
     
     .about > p {
