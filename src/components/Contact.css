@@ -1,136 +1,93 @@
-/* Reset any default margins/padding that might affect navbar positioning */
+/* Reset */
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body, html {
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
+/* Section Base */
 .about2 {
-     min-height: 100vh;
-     background: linear-gradient(135deg, #0a0f1c, #111827, #1f2937);
-     color: white;
-     font-family: 'Montserrat', sans-serif;
-     position: relative;
-     overflow-x: hidden;
-     padding-top: 60px;
-     /* Add padding for fixed navbar */
-     margin-top: 0;
- }
-
- /* Simplified background effect */
- .about2::before {
-     content: '';
-     position: absolute;
-     top: 0;
-     left: 0;
-     right: 0;
-     bottom: 0;
-     background:
-         radial-gradient(circle at 20% 80%, rgba(0, 123, 255, 0.08) 0%, transparent 50%),
-         radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.08) 0%, transparent 50%);
-     pointer-events: none;
-     z-index: 1;
- }
-
- .about2>* {
-     position: relative;
-     z-index: 2;
- }
-
- .about2 > h4 {
-    font-size: 2rem;
-    font-weight: 800;
-    margin-top: 70px;
-    margin-bottom: 30px;
-    margin-left: 120px;
-    margin-right: 80px;
-    background: linear-gradient(135deg, #00d4ff, #8a2be2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    position: relative;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0a0f1c, #111827, #1f2937);
+  color: white;
+  font-family: 'Montserrat', sans-serif;
+  position: relative;
+  overflow-x: hidden;
+  padding-top: 60px;
 }
 
- /* Page header styling */
+/* Background FX */
+.about2::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(circle at 20% 80%, rgba(0, 123, 255, 0.08) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.08) 0%, transparent 50%);
+  pointer-events: none;
+  z-index: 1;
+}
+
+.about2 > * {
+  position: relative;
+  z-index: 2;
+}
+
+/* Heading */
+.about2 > h2,
+.about2 > h4 {
+  background: linear-gradient(135deg, #00d4ff, #8a2be2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  position: relative;
+  margin: 40px 5vw 20px;
+}
+
 .about2 > h2 {
-    font-size: 4rem;
-    font-weight: 800;
-    margin-top: 40px; /* Reduced since we have padding-top */
-    margin-bottom: 30px;
-    margin-left: 120px;
-    margin-right: 80px;
-    background: linear-gradient(135deg, #00d4ff, #8a2be2);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    position: relative;
+  font-size: 3rem;
+  font-weight: 800;
 }
 
 .about2 > h2::after {
-    content: '';
-    position: absolute;
-    bottom: -10px;
-    left: 0; /* Changed from 10% to align with 80px margin */
-    width: 100px;
-    height: 3px;
-    background: linear-gradient(135deg, #00d4ff, #8a2be2);
-    border-radius: 2px;
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  width: 100px;
+  height: 3px;
+  background: linear-gradient(135deg, #00d4ff, #8a2be2);
+  border-radius: 2px;
 }
 
+.about2 > h4 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-top: 60px;
+}
+
+/* Contact Form Container */
 .contact-form {
   max-width: 1200px;
-  margin: 40px 100px;
-  padding: 20px;
+  margin: 40px auto;
+  padding: 0 5vw;
   display: flex;
   flex-direction: column;
   gap: 20px;
 }
 
-.opportunity-note {
-  margin-top: 30px;
-  font-size: 18px;
-  color: #e5e7eb; /* light gray */
-  text-align: center;
-  font-weight: 500;
-  background: #111827; /* dark background */
-  padding: 15px 20px;
-  border-radius: 8px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease-in-out;
-}
-
-.opportunity-note strong {
-  color: #38bdf8; /* light blue */
-}
-
-.opportunity-note:hover {
-  background: #1f2937;
-  transform: scale(1.02);
-}
-
-.form-status {
-  font-size: 34px;
-  margin-top: 10px;
-  text-align: center;
-}
-
-.form-status.success {
-  color: green;
-}
-
-.form-status.error {
-  color: red;
-}
-
-
-
+/* Responsive Row */
 .form-row {
   display: flex;
+  flex-direction: row;
   gap: 20px;
 }
 
@@ -138,6 +95,7 @@ body, html {
   flex: 1;
 }
 
+/* Input & Textarea Styling */
 .contact-form input,
 .contact-form textarea {
   padding: 12px 16px;
@@ -152,7 +110,7 @@ body, html {
 }
 
 .contact-form textarea {
-    height: 100px;
+  height: 100px;
 }
 
 .contact-form input::placeholder,
@@ -165,6 +123,7 @@ body, html {
   border-color: #10b981;
 }
 
+/* Button */
 .contact-form button {
   padding: 12px;
   font-size: 1rem;
@@ -181,3 +140,89 @@ body, html {
   transform: scale(1.02);
 }
 
+/* Form Status */
+.form-status {
+  font-size: 1.5rem;
+  margin-top: 10px;
+  text-align: center;
+}
+
+.form-status.success {
+  color: green;
+}
+
+.form-status.error {
+  color: red;
+}
+
+/* Opportunity Note */
+.opportunity-note {
+  margin-top: 30px;
+  font-size: 1rem;
+  color: #e5e7eb;
+  text-align: center;
+  font-weight: 500;
+  background: #111827;
+  padding: 15px 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: all 0.3s ease-in-out;
+}
+
+.opportunity-note strong {
+  color: #38bdf8;
+}
+
+.opportunity-note:hover {
+  background: #1f2937;
+  transform: scale(1.02);
+}
+
+/* ------------------ */
+/* ✅ Media Queries */
+/* ------------------ */
+
+@media (max-width: 768px) {
+  .about2 > h2 {
+    font-size: 2.5rem;
+  }
+
+  .about2 > h4 {
+    font-size: 1.2rem;
+    margin-top: 40px;
+  }
+
+  .form-row {
+    flex-direction: column;
+  }
+
+  .contact-form {
+    margin: 30px 5vw;
+  }
+
+  .opportunity-note {
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about2 > h2 {
+    font-size: 2rem;
+  }
+
+  .about2 > h4 {
+    font-size: 1rem;
+  }
+
+  .form-status {
+    font-size: 1.2rem;
+  }
+
+  .contact-form textarea {
+    height: 80px;
+  }
+
+  .opportunity-note {
+    padding: 12px 16px;
+  }
+}

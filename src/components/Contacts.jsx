@@ -53,10 +53,9 @@ const Contacts = () => {
           <Map
             style={{
               height: '400px',
-              width: '80vw',
-              marginLeft: '120px',
-              marginRight: '120px',
-              marginTop: '40px',
+              width: '90vw',
+              maxWidth: '1000px',
+              margin: '40px auto',
               borderRadius: '30px',
               overflow: 'hidden',
             }}
