@@ -13,7 +13,7 @@ const Contacts = () => {
     setform({ ...form, [e.target.name]: e.target.value });
   };
 
-
+  const apiKey = import.meta.env.VITE_GOOGLE_API_KEY;
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -49,7 +49,7 @@ const Contacts = () => {
       <div className='about2'>
         <h2 className='header2'>Contacts</h2>
 
-        <APIProvider apiKey={'AIzaSyBYogbrbmQsQp9ryuogrHJmndy8YWTMLpY'}>
+        <APIProvider apiKey={apiKey}>
           <Map
             style={{
               height: '400px',
