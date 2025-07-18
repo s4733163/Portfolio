@@ -1,0 +1,291 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap');
+
+/* Reset to ensure navbar positioning */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.navbar {
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 80px;
+    height: 60px;
+    background: linear-gradient(135deg, rgba(10, 15, 28, 0.95), rgba(17, 24, 39, 0.95));
+    backdrop-filter: blur(15px);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.3);
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100vw;
+    z-index: 9999;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    box-sizing: border-box;
+}
+
+/* Enhance the shadow on scroll */
+.navbar:hover {
+    box-shadow: 0 6px 30px rgba(0, 212, 255, 0.1);
+    border-bottom: 1px solid rgba(0, 212, 255, 0.4);
+}
+
+/* Logo/Brand styling */
+.navbar > div:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.navbar > div:first-child > h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    margin: 0;
+    background: linear-gradient(135deg, #00d4ff, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    font-family: 'Fira Code', monospace; /* Changed back to Fira Code */
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navbar > div:first-child > h1:hover {
+    transform: scale(1.05);
+    filter: drop-shadow(0 0 15px rgba(0, 212, 255, 0.6));
+}
+
+/* Add a subtle glow effect to the logo */
+.navbar > div:first-child > h1::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #00d4ff, #8a2be2);
+    opacity: 0;
+    filter: blur(20px);
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.navbar > div:first-child > h1:hover::after {
+    opacity: 0.3;
+}
+
+/* Navigation links container */
+.navbar > div:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    margin-right: 0;
+}
+
+/* Individual navigation links */
+.navbar > div:nth-child(2) > a {
+    text-decoration: none;
+    color: #cbd5e1;
+    font-size: 1.1rem;
+    font-weight: 500;
+    position: relative;
+    padding: 12px 20px;
+    transition: all 0.3s ease;
+    letter-spacing: 0.5px;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Hover effect for navigation links */
+.navbar > div:nth-child(2) > a:hover {
+    color: #00d4ff;
+    background: rgba(0, 212, 255, 0.1);
+    transform: translateY(-2px);
+    text-shadow: 0 0 10px rgba(0, 212, 255, 0.5);
+}
+
+/* Active state styling */
+.navbar > div:nth-child(2) > a:active {
+    transform: translateY(0);
+}
+
+/* Animated border effect */
+.navbar > div:nth-child(2) > a::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.navbar > div:nth-child(2) > a:hover::before {
+    left: 100%;
+}
+
+/* Bottom border effect */
+.navbar > div:nth-child(2) > a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(135deg, #00d4ff, #8a2be2);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.navbar > div:nth-child(2) > a:hover::after {
+    width: 80%;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .navbar {
+        padding: 20px 60px;
+        height: 80px;
+    }
+    
+    .navbar > div:nth-child(2) {
+        gap: 30px;
+    }
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        padding: 20px 40px;
+        height: 80px;
+    }
+    
+    .navbar > div:nth-child(2) {
+        gap: 25px;
+    }
+    
+    .navbar > div:nth-child(2) > a {
+        font-size: 1rem;
+        padding: 10px 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 15px 20px;
+        height: 70px; /* Reduced for mobile */
+    }
+    
+    .navbar > div:first-child > h1 {
+        font-size: 1.5rem;
+    }
+    
+    .navbar > div:nth-child(2) {
+        gap: 20px;
+    }
+    
+    .navbar > div:nth-child(2) > a {
+        font-size: 0.95rem;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    .navbar {
+        padding: 15px 15px;
+        flex-wrap: wrap;
+        height: auto;
+        min-height: 70px;
+        justify-content: center;
+    }
+    
+    .navbar > div:first-child {
+        width: 100%;
+        justify-content: center;
+        margin-bottom: 10px;
+    }
+    
+    .navbar > div:first-child > h1 {
+        font-size: 1.3rem;
+    }
+    
+    .navbar > div:nth-child(2) {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        width: 100%;
+    }
+    
+    .navbar > div:nth-child(2) > a {
+        font-size: 0.9rem;
+        padding: 6px 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 15px;
+        height: auto;
+        min-height: 80px;
+    }
+    
+    .navbar > div:first-child > h1 {
+        font-size: 1.2rem;
+    }
+    
+    .navbar > div:nth-child(2) {
+        gap: 12px;
+    }
+    
+    .navbar > div:nth-child(2) > a {
+        font-size: 0.85rem;
+        padding: 5px 8px;
+    }
+}
+
+/* Additional cybersecurity-themed effects */
+.navbar::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 50%, rgba(138, 43, 226, 0.03) 0%, transparent 50%);
+    pointer-events: none;
+}
+
+/* Subtle animation for the entire navbar */
+@keyframes navbarGlow {
+    0%, 100% {
+        border-bottom-color: rgba(0, 212, 255, 0.3);
+    }
+    50% {
+        border-bottom-color: rgba(0, 212, 255, 0.5);
+    }
+}
+
+.navbar {
+    animation: navbarGlow 4s ease-in-out infinite;
+}
+
+/* Ensure body has no margin/padding that could affect positioning */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* Smooth scrolling adjustment for fixed navbar */
+html {
+    scroll-padding-top: 100px;
+}

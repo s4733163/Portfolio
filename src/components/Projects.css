@@ -1,0 +1,460 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+
+/* Reset any default margins/padding that might affect navbar positioning */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.about {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0f1c, #111827, #1f2937);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    margin-top: 0; /* Ensure no top margin */
+}
+
+/* Simplified background effect */
+.about::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 123, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.about > * {
+    position: relative;
+    /* z-index: 2; */ /* Removed to prevent navbar positioning issues */
+}
+
+/* Page header styling */
+.about > h2 {
+    font-size: 4rem;
+    font-weight: 800;
+    text-align: center;
+    margin: 100px 0 30px 0;
+    background: linear-gradient(135deg, #00d4ff, #8a2be2);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    position: relative;
+}
+
+.about > h2::after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100px;
+    height: 3px;
+    background: linear-gradient(135deg, #00d4ff, #8a2be2);
+    border-radius: 2px;
+}
+
+/* Page description */
+.about > p {
+    max-width: 800px;
+    margin: 0 auto 80px auto;
+    text-align: center;
+    font-size: 1.2rem;
+    line-height: 1.7;
+    color: #cbd5e1;
+    padding: 0 20px;
+    font-weight: 400;
+}
+
+/* Projects container - 3 column grid */
+.projects {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 40px 100px 40px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+}
+
+/* Individual project card */
+.project {
+    background: linear-gradient(135deg, rgba(17, 24, 39, 0.8), rgba(31, 41, 55, 0.8));
+    border: 1px solid rgba(0, 212, 255, 0.3);
+    border-radius: 20px;
+    padding: 30px;
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+    position: relative;
+    overflow: hidden;
+    backdrop-filter: blur(10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.project::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.02), rgba(138, 43, 226, 0.02));
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project:hover::before {
+    opacity: 1;
+}
+
+.project:hover {
+    transform: translateY(-10px) scale(1.02);
+    border-color: rgba(0, 212, 255, 0.6);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4), 0 0 30px rgba(0, 212, 255, 0.2);
+}
+
+/* Project title */
+.project h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 15px;
+    color: #00d4ff;
+    font-family: 'Fira Code', monospace;
+    position: relative;
+}
+
+.project h1::before {
+    content: '# ';
+    color: #8a2be2;
+    font-weight: 600;
+}
+
+/* Project description */
+.project > p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cbd5e1;
+    margin-bottom: 25px;
+    font-weight: 400;
+}
+
+/* Project image - FIXED */
+.project img {
+    width: 100%; /* Fixed from 1000px to 100% */
+    height: 200px;
+    object-fit: cover;
+    border-radius: 12px;
+    margin-bottom: 25px;
+    border: 2px solid rgba(0, 212, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.project img:hover {
+    border-color: rgba(0, 212, 255, 0.5);
+    transform: scale(1.02);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Tech stack container */
+.techstack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 25px;
+}
+
+/* Individual tech pills */
+.tech-pill {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.2), rgba(138, 43, 226, 0.2));
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    color: #00d4ff;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    font-family: 'Fira Code', monospace;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.tech-pill::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.tech-pill:hover::before {
+    left: 100%;
+}
+
+.tech-pill:hover {
+    transform: translateY(-2px);
+    border-color: rgba(0, 212, 255, 0.6);
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.3), rgba(138, 43, 226, 0.3));
+    box-shadow: 0 5px 15px rgba(0, 212, 255, 0.2);
+}
+
+/* GitHub link styling */
+.project a[href*="github"] {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 45px;
+    height: 45px;
+    background: linear-gradient(135deg, #333, #555);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    margin-right: 15px;
+}
+
+.project a[href*="github"]::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 0%, transparent 70%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.project a[href*="github"]:hover::before {
+    opacity: 1;
+}
+
+.project a[href*="github"]:hover {
+    transform: translateY(-3px) scale(1.1);
+    background: linear-gradient(135deg, #555, #777);
+    border-color: rgba(255, 255, 255, 0.4);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.project a[href*="github"] i {
+    font-size: 1.2rem;
+}
+
+/* Live link styling - targets the second anchor that's not GitHub */
+.project a:not([href*="github"]) {
+    display: inline-flex;
+    align-items: center;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #00d4ff, #0099cc);
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.project a:not([href*="github"])::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.project a:not([href*="github"]):hover::before {
+    left: 100%;
+}
+
+.project a:not([href*="github"]):hover {
+    transform: translateY(-3px) scale(1.05);
+    background: linear-gradient(135deg, #00e5ff, #00acc1);
+    box-shadow: 0 10px 25px rgba(0, 212, 255, 0.4);
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .projects {
+        padding: 0 30px 80px 30px;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 30px;
+    }
+    
+    .about > h2 {
+        font-size: 3.5rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .projects {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about {
+        /* padding-top: 70px; */ /* Removed to keep navbar at top */
+    }
+    
+    .about > h2 {
+        font-size: 3rem;
+        margin: 40px 0 20px 0;
+    }
+    
+    .about > p {
+        font-size: 1.1rem;
+        margin-bottom: 60px;
+        padding: 0 15px;
+    }
+    
+    .projects {
+        grid-template-columns: 1fr;
+        padding: 0 20px 60px 20px;
+        gap: 30px;
+    }
+    
+    .project {
+        padding: 25px;
+    }
+    
+    .project h1 {
+        font-size: 1.8rem;
+    }
+    
+    .project img {
+        height: 180px;
+    }
+    
+    .tech-pill {
+        font-size: 0.8rem;
+        padding: 6px 12px;
+    }
+}
+
+@media (max-width: 640px) {
+    .about {
+        /* padding-top: 90px; */ /* Removed to keep navbar at top */
+    }
+}
+
+@media (max-width: 480px) {
+    .about {
+        /* padding-top: 100px; */ /* Removed to keep navbar at top */
+    }
+    
+    .about > h2 {
+        font-size: 2.5rem;
+        margin: 10px 0 15px 0;
+    }
+    
+    .about > p {
+        font-size: 1rem;
+        margin-bottom: 50px;
+    }
+    
+    .projects {
+        padding: 0 15px 50px 15px;
+        gap: 25px;
+    }
+    
+    .project {
+        padding: 20px;
+    }
+    
+    .project h1 {
+        font-size: 1.6rem;
+        margin-bottom: 12px;
+    }
+    
+    .project > p {
+        font-size: 0.95rem;
+        margin-bottom: 20px;
+    }
+    
+    .project img {
+        height: 160px;
+        margin-bottom: 20px;
+    }
+    
+    .techstack {
+        gap: 8px;
+        margin-bottom: 20px;
+    }
+    
+    .tech-pill {
+        font-size: 0.75rem;
+        padding: 5px 10px;
+    }
+    
+    .project a[href*="github"] {
+        width: 40px;
+        height: 40px;
+        margin-right: 12px;
+    }
+    
+    .project a[href*="github"] i {
+        font-size: 1rem;
+    }
+    
+    .project a:not([href*="github"]) {
+        padding: 10px 20px;
+        font-size: 0.85rem;
+    }
+}
+
+/* Accessibility improvements */
+@media (prefers-reduced-motion: reduce) {
+    .project,
+    .tech-pill,
+    .project a {
+        transition: none;
+    }
+    
+    .project::before,
+    .tech-pill::before,
+    .project a::before {
+        display: none;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .about > h2 {
+        background: #ffffff;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+    
+    .project {
+        border-width: 2px;
+    }
+    
+    .tech-pill {
+        border-width: 2px;
+    }
+}

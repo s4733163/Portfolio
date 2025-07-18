@@ -1,0 +1,433 @@
+/* Import Google Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&family=Fira+Code:wght@400;500;600&display=swap');
+
+/* Reset any default margins/padding that might affect navbar positioning */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+.home-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #0a0f1c, #111827, #1f2937);
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    position: relative;
+    overflow-x: hidden;
+    margin-top: 0; /* Ensure no top margin */
+}
+
+/* Simplified background effect */
+.home-wrapper::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, rgba(0, 123, 255, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, rgba(138, 43, 226, 0.08) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 1;
+}
+
+.home-wrapper > * {
+    position: relative;
+    z-index: 2;
+}
+
+/* Intro section - simplified */
+.intro {
+    padding: 60px 60px 80px;
+    display: flex;
+    gap: 80px;
+    align-items: center;
+    max-width: 1400px;
+    margin: 40px auto;
+    min-height: 70vh;
+}
+
+.intro > div {
+    flex: 1;
+}
+
+/* Main heading - minimal animation */
+.intro > div > h1 {
+    font-size: 5rem;
+    font-weight: 800;
+    margin: 0 0 15px 0;
+    background: linear-gradient(135deg, #00d4ff, #8a2be2, #00e5ff);
+    background-size: 200% 200%;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    line-height: 1.1;
+    animation: gradientShift 3s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.intro > div > h2 {
+    color: #94a3b8;
+    font-size: 1.6rem;
+    font-weight: 500;
+    margin: 0 0 35px 0;
+    font-family: 'Fira Code', monospace;
+    position: relative;
+    padding-left: 30px;
+}
+
+/* Simple cursor effect */
+.intro > div > h2::before {
+    content: '>';
+    position: absolute;
+    left: 0;
+    color: #00d4ff;
+    animation: blink 1.5s infinite;
+}
+
+@keyframes blink {
+    0%, 50% { opacity: 1; }
+    51%, 100% { opacity: 0.3; }
+}
+
+.intro > div > p {
+    font-size: 1.15rem;
+    line-height: 1.8;
+    color: #cbd5e1;
+    font-weight: 400;
+    max-width: 650px;
+    margin-bottom: 30px;
+}
+
+/* Image styling - minimal effects */
+.intro > img {
+    border-radius: 25px;
+    border: 3px solid rgba(0, 212, 255, 0.4);
+    box-shadow: 
+        0 25px 50px rgba(0, 0, 0, 0.4),
+        0 0 40px rgba(0, 212, 255, 0.2);
+    transition: all 0.3s ease;
+}
+
+.intro > img:hover {
+    transform: scale(1.03);
+    box-shadow: 
+        0 35px 70px rgba(0, 0, 0, 0.5),
+        0 0 60px rgba(0, 212, 255, 0.4);
+    border-color: rgba(0, 212, 255, 0.6);
+}
+
+/* Status section */
+.home-wrapper > div:nth-child(3) {
+    text-align: center;
+    margin: 60px auto;
+    max-width: 900px;
+    padding: 0 30px;
+}
+
+.home-wrapper > div:nth-child(3) > p {
+    background: linear-gradient(135deg, rgba(0, 212, 255, 0.15), rgba(138, 43, 226, 0.15));
+    border: 1px solid rgba(0, 212, 255, 0.4);
+    padding: 25px 35px;
+    border-radius: 20px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    margin: 0;
+    backdrop-filter: blur(15px);
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease;
+}
+
+.home-wrapper > div:nth-child(3) > p:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+    border-color: rgba(0, 212, 255, 0.6);
+}
+
+/* Simple shimmer effect */
+.home-wrapper > div:nth-child(3) > p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(0, 212, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.home-wrapper > div:nth-child(3) > p:hover::before {
+    left: 100%;
+}
+
+/* Buttons container */
+.buttons {
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    margin: 80px 0;
+    flex-wrap: wrap;
+}
+
+.buttons button {
+    padding: 18px 40px;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    min-width: 200px;
+}
+
+/* Simple button shimmer */
+.buttons button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.5s ease;
+}
+
+.buttons button:hover::before {
+    left: 100%;
+}
+
+.download {
+    background: linear-gradient(135deg, #00d4ff, #0099cc, #00b8d4);
+    color: white;
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+}
+
+.download:hover {
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 15px 45px rgba(0, 212, 255, 0.5);
+    background: linear-gradient(135deg, #00e5ff, #00acc1, #00c9ff);
+}
+
+.download > i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+.view_projects {
+    background: rgba(0, 212, 255, 0.1);
+    color: #00d4ff;
+    border: 2px solid #00d4ff;
+    backdrop-filter: blur(10px);
+}
+
+.view_projects:hover {
+    background: #00d4ff;
+    color: #0a0f1c;
+    transform: translateY(-3px) scale(1.02);
+    box-shadow: 0 10px 30px rgba(0, 212, 255, 0.4);
+}
+
+.view_projects > i {
+    margin-right: 10px;
+    font-size: 1.1rem;
+}
+
+/* Collaborate button */
+.home-wrapper > div:last-child {
+    text-align: center;
+    margin: 80px 0 100px 0;
+}
+
+.collaborate {
+    padding: 25px 60px;
+    background: linear-gradient(135deg, #8a2be2, #4a0e4e, #9932cc);
+    color: white;
+    border: none;
+    border-radius: 18px;
+    font-size: 1.3rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Montserrat', sans-serif;
+    box-shadow: 0 12px 35px rgba(138, 43, 226, 0.4);
+    text-transform: uppercase;
+}
+
+.collaborate:hover {
+    transform: translateY(-4px) scale(1.03);
+    box-shadow: 0 20px 50px rgba(138, 43, 226, 0.5);
+    background: linear-gradient(135deg, #9932cc, #5a1958, #a855f7);
+}
+
+.collaborate::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+    transition: left 0.6s ease;
+}
+
+.collaborate:hover::before {
+    left: 100%;
+}
+
+/* Responsive design */
+@media (max-width: 1200px) {
+    .intro {
+        padding: 50px 50px 60px;
+        gap: 60px;
+    }
+    
+    .intro > div > h1 {
+        font-size: 4.2rem;
+    }
+}
+
+@media (max-width: 1024px) {
+    .intro {
+        padding: 40px 40px 50px;
+        gap: 50px;
+    }
+    
+    .intro > div > h1 {
+        font-size: 3.8rem;
+    }
+    
+    .intro > img {
+        width: 280px !important;
+    }
+    
+    .buttons {
+        gap: 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-wrapper {
+        padding-top: 70px; /* Match mobile navbar height */
+    }
+    
+    .intro {
+        flex-direction: column;
+        text-align: center;
+        padding: 30px 20px 30px;
+        gap: 40px;
+        min-height: auto;
+    }
+    
+    .intro > div > h1 {
+        font-size: 3.2rem;
+    }
+    
+    .intro > div > h2 {
+        font-size: 1.4rem;
+        padding-left: 0;
+    }
+    
+    .intro > div > h2::before {
+        display: none;
+    }
+    
+    .intro > img {
+        width: 250px !important;
+        order: -1;
+    }
+    
+    .buttons {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin: 60px 0;
+    }
+    
+    .buttons button {
+        width: 280px;
+        padding: 16px 35px;
+    }
+    
+    .collaborate {
+        width: 280px;
+        padding: 20px 50px;
+        font-size: 1.2rem;
+    }
+    
+    .home-wrapper > div:nth-child(3) {
+        margin: 50px auto;
+        padding: 0 20px;
+    }
+    
+    .home-wrapper > div:nth-child(3) > p {
+        padding: 20px 25px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 640px) {
+    .home-wrapper {
+        padding-top: 90px; /* Account for wrapped navbar */
+    }
+}
+
+@media (max-width: 480px) {
+    .home-wrapper {
+        padding-top: 100px; /* Account for stacked navbar */
+    }
+    
+    .intro > div > h1 {
+        font-size: 2.8rem;
+    }
+    
+    .intro > div > h2 {
+        font-size: 1.2rem;
+    }
+    
+    .intro > div > p {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+    
+    .intro > img {
+        width: 200px !important;
+    }
+    
+    .buttons button {
+        width: 250px;
+        padding: 14px 30px;
+        font-size: 1rem;
+    }
+    
+    .collaborate {
+        width: 250px;
+        padding: 18px 40px;
+        font-size: 1.1rem;
+    }
+    
+    .home-wrapper > div:nth-child(3) > p {
+        font-size: 1rem;
+        padding: 18px 20px;
+    }
+}
