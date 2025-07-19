@@ -25,6 +25,10 @@ const Home = () => {
         navigate('/project')
     }
 
+    const take = () => {
+        navigate('/contact')
+    }
+
     return (
         <div className='home-wrapper'>
             <Navbar />
@@ -50,7 +54,7 @@ const Home = () => {
                 </button>
             </div >
             <div>
-                <button className="collaborate">
+                <button className="collaborate" onClick={take}>
                     LET'S COLLABORATE
                 </button>
             </div>
