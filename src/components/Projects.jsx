@@ -4,6 +4,7 @@ import './Projects.css'
 import Project from './Project'
 import project from '../assets/Screenshot 2025-07-15 at 7.55.05 PM.png'
 import project3 from '../assets/Screenshot 2025-12-06 at 12.00.46 PM.png'
+import CompliGen from '../assets/compligen.png'
 
 const Projects = () => {
   let description="TableTap is my first full-stack project, fully developed by me. It's a restaurant ordering system with QR-based menus and vendor dashboards. Built with server-side rendering (SSR) for efficiency, and adaptable to use React.js and Django REST Framework for scalable deployment."
@@ -35,6 +36,25 @@ const Projects = () => {
             github=""
             livelink="https://smart-recipe-kpak.vercel.app/"
           />
+          <Project
+            name="CompliGen"
+            description="CompliGen generates clear, tailored compliance documents (Privacy Policies, Terms & Conditions, and more) for your product in minutes. Answer a few guided questions and get export-ready, jurisdiction-aware drafts aligned with common standards and best practices—so compliance feels simple, not overwhelming."
+            image={CompliGen}
+            techstack={[
+              "React",
+              "Vite",
+              "TailwindCSS",
+              "Django REST Framework",
+              "PostgreSQL",
+              "LangChain",
+              "RAG (Vector DB)",
+              "Google Vertex AI (Embeddings)",
+              "Gemini API",
+            ]}
+            github="https://github.com/s4733163/CompliGen"
+            livelink=""
+          />
+
         </div>
       </div>
     </>
