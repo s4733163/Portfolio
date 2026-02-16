@@ -5,9 +5,10 @@ import Project from './Project'
 import project from '../assets/Screenshot 2025-07-15 at 7.55.05 PM.png'
 import project3 from '../assets/Screenshot 2025-12-06 at 12.00.46 PM.png'
 import CompliGen from '../assets/compligen.png'
+import QuickNotes from '../assets/WebNotes.png'
 
 const Projects = () => {
-  let description="TableTap is my first full-stack project, fully developed by me. It's a restaurant ordering system with QR-based menus and vendor dashboards. Built with server-side rendering (SSR) for efficiency, and adaptable to use React.js and Django REST Framework for scalable deployment."
+  let description = "TableTap is my first full-stack project, fully developed by me. It's a restaurant ordering system with QR-based menus and vendor dashboards. Built with server-side rendering (SSR) for efficiency, and adaptable to use React.js and Django REST Framework for scalable deployment."
 
   return (
     <>
@@ -54,6 +55,22 @@ const Projects = () => {
             github="https://github.com/s4733163/CompliGen"
             livelink=""
           />
+          <Project
+            name="QuickNotes"
+            description="QuickNotes is a lightweight browser extension that lets you instantly capture, save, and organize notes from any webpage. Whether it's research highlights, quick reminders, or important snippets, QuickNotes keeps everything synced and accessible—helping you stay focused and productive without switching tabs."
+            image={QuickNotes}
+            techstack={[
+              "JavaScript",
+              "HTML",
+              "CSS",
+              "Chrome Extension API",
+              "Local Storage / Chrome Storage API",
+              "React (Optional UI Components)",
+            ]}
+            github="https://github.com/s4733163/WebNotes"
+            livelink=""
+          />
+
 
         </div>
       </div>
