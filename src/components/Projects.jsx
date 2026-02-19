@@ -8,7 +8,7 @@ import CompliGen from '../assets/compligen.png'
 import QuickNotes from '../assets/WebNotes.png'
 
 const Projects = () => {
-  let description = "TableTap is my first full-stack project, fully developed by me. It's a restaurant ordering system with QR-based menus and vendor dashboards. Built with server-side rendering (SSR) for efficiency, and adaptable to use React.js and Django REST Framework for scalable deployment."
+  let description = "TableTap is my first full-stack project, fully developed by me. It's a restaurant ordering system with QR-based menus and vendor dashboards. Built with server-side rendering (SSR) for efficiency."
 
   return (
     <>
@@ -65,7 +65,6 @@ const Projects = () => {
               "CSS",
               "Chrome Extension API",
               "Local Storage / Chrome Storage API",
-              "React (Optional UI Components)",
             ]}
             github="https://github.com/s4733163/WebNotes"
             livelink=""
