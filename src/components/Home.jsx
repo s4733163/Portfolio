@@ -2,7 +2,7 @@ import React from 'react'
 import image from '../assets/IMG_2833.png'
 import './Home.css'
 import Navbar from './Navbar'
-import pdf from '../assets/Resume_Varun.pdf'
+import pdf from '../assets/Varun_Singh_Resume.pdf'
 import { useNavigate } from 'react-router-dom';
 
 
