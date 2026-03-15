@@ -67,7 +67,7 @@ const Projects = () => {
               "Local Storage / Chrome Storage API",
             ]}
             github="https://github.com/s4733163/WebNotes"
-            livelink=""
+            livelink="https://chromewebstore.google.com/detail/quick-notes/kbfnlicpnpepfnbabfgiljijjnfcgacf?authuser=1&hl=en"
           />
 
 
