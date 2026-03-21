@@ -22,14 +22,6 @@ const Projects = () => {
         <br />
         <div className="projects">
           <Project
-            name="TableTap"
-            description={description}
-            image={project} // replace with actual image path
-            techstack={["Django", "HTML", "CSS", "JavaScript", "SQL ORM"]}
-            github=""
-            livelink="https://tabletapuq.onrender.com/tabletap/" // leave blank if not deployed yet
-          />
-          <Project
             name="SmartRecipe"
             description="SmartRecipe instantly transforms the ingredients you have into personalised, nutritious, and easy-to-follow AI-crafted recipes.Simply enter your ingredients and enjoy smart cooking made effortless.Discover new dishes, elevate everyday meals, and cook with confidence."
             image={project3}
