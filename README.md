@@ -4,7 +4,7 @@ A personal portfolio website built with React and Vite, showcasing projects, ski
 
 ## Live Site
 
-[https://s4733163.github.io/Portfolio](https://s4733163.github.io/Portfolio)
+[https://portfolio-five-theta-73.vercel.app/](https://portfolio-five-theta-73.vercel.app/)
 
 ## Tech Stack
 
